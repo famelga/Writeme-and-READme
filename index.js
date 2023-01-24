@@ -57,6 +57,10 @@ function writeReadMe() {
               name: 'MIT',
               value: `MIT License
 
+https://opensource.org/licenses/MIT
+
+![MIT Badge](https://img.shields.io/badge/license-MIT-blue)
+
 Copyright (c) 2023 [Full Name]
               
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -81,6 +85,10 @@ SOFTWARE.`,
               key: 'U',
               name: 'Boost',
               value: `Boost Software License - Version 1.0 - August 17th, 2003
+
+https://www.boost.org/LICENSE_1_0.txt 
+
+[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]
 
 Permission is hereby granted, free of charge, to any person or organization
 obtaining a copy of the software and accompanying documentation covered by
@@ -108,6 +116,10 @@ DEALINGS IN THE SOFTWARE.`,
               key: 'd',
               name: 'Unlicense',
               value: `This is free and unencumbered software released into the public domain.
+
+http://unlicense.org/
+
+![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
 distribute this software, either in source code form or as a compiled
@@ -163,6 +175,8 @@ ${answer.description}
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
         
 ## Installation
         
@@ -191,7 +205,7 @@ ${answer.tests}
 ## Questions
 
 For any furthur questions, please contact ${answer.fullName} at ${answer.email}. 
-GitHub Profile: https://api.github.com/users/${answer.username}/repos?per_page=100
+GitHub Profile: https://api.github.com/users/${answer.gitHub}/repos?per_page=100
 
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.`)
 
