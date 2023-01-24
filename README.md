@@ -11,38 +11,42 @@
 
 ## Description 
 
-Using the inquirer and fs npm packages, users are able to generate a README>md documents usign just a command-line application.
+Using the inquirer and fs npm packages, users are able to generate templateREADME.md documents using just a command-line application.
 
-This application allows for users to answer a series of questions to fill in the necessary of the README template. The inquirer package (version 8.2.4) consists of prompts relating to the README. Responses to these prompts then substitute the placeholders (${}) in the template literal that houses the README template. The writeFile method of File system (fs) creates a new README.md document based on the responses and template literal.  
+This application allows for users to answer a series of questions to fill in the necessary of the README template. The inquirer package (version 8.2.4) consists of prompts relating to the README. Responses to these prompts then substitute the placeholders (${}) in the template literal that houses the README template. The writeFile method of File system (fs) creates a new templateREADME.md document based on the responses and template literal.  
 
 ## Portfolio Example
 
-Since the scheduler displays the hours in 12-hour notation, I had also labeled the div ids in the same way. For example, 1pm was "id='hour 1'. However, this created complexity when I was trying to format the hours on the the scheduler to match the current hour. 
+Responses to the prompts were traversed from prompt using the name key to target the corressponding with the placeholders. 
 
 
-```function gatherCrit() {
-<div id="hour-1" class="row time-block">
+```    inquirer
+    .prompt([
+        { 
+            type: "input",
+            name: "fullName",
+            message: "What is your full name?",
+        },
 ```
 
-By switching the 24-hour notation on the the id only, rather than the scheduler, I was able to write code gave the id an number type that could be compared with the current hour through dayjs. 
+The user's name is target using the syntax "answer.fullName" based on their response to the prompt above. 
 
 ```
-<div id="hour-13" class="row time-block">
+${answer.fullName}
 ```
 
 
 ## Usage 
 
-Visit website.
+Use command-line to generate a templateREADME.md document.
 
-
-![Scheduler Homepage](./assets/images/Work%20Day%20Scheduler.jpeg)
+![README Generator](./assets/images/Work%20Day%20Scheduler.jpeg)
 
 ## Learning Points 
 
-This project helped me understand the importance of scopes among tags and their relationships to one another. While I have been able to identify parent, child, and sibling tags, I did not have a fully understanding of their relevance to writing code if I could simply refer the the tag, id, or class name. 
+This project helped me understand how to use the inquirer package to gather data based on user-input. assigning unique names to the "name" keys was essential so that the correct responses were being referenced. 
 
-Since I may want to target code tags, ids, and classes that have varying names in similar ways, calling on the nearest parent, child, or siblings will address them at once.
+Also, I become more familiar with using back-ticks to contain template literals. Initially, I was using single-quotes, which resulted in errors and the text not being grouped together. Once I noticed my error, the selected text were uniform-color, symbolizing that the template literals would be functional. 
 
 ## Author Info
 
@@ -58,6 +62,8 @@ Since I may want to target code tags, ids, and classes that have varying names i
 ## Credits
 
 Fayven Amelga
+
+https://shields.io/ 
 
 
 ## License

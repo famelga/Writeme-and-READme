@@ -153,14 +153,7 @@ For more information, please refer to <https://unlicense.org>`,
        },
     ])
     .then ((answer) => {
-        
-        console.log(answer.title);
-        console.log(answer.description);
-        console.table(answer.contents);
-        console.log(answer.installation);
-        console.log(answer.usage);
-        console.log(answer.credits);
-        console.log(answer.license);
+
 
         var readMe = (
 `# ${answer.title}
