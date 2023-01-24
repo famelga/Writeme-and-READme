@@ -40,7 +40,7 @@ ${answer.fullName}
 
 Use command-line to generate a templateREADME.md document.
 
-![README Generator](./assets/images/Work%20Day%20Scheduler.jpeg)
+![README Generator](./assests/images/Untitled_%20Jan%2023%2C%202023%2011_03%20PM.gif)
 
 ## Learning Points 
 
