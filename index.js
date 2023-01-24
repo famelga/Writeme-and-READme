@@ -4,6 +4,21 @@ const fs = require('fs');
 function writeReadMe() {
     inquirer
     .prompt([
+        { 
+            type: "input",
+            name: "fullName",
+            message: "What is your full name?",
+        },
+        { 
+            type: "input",
+            name: "email",
+            message: "What is your email address?",
+        },
+        { 
+            type: "input",
+            name: "gitHub",
+            message: "What is your GitHub username?",
+        },
        { 
         type: "input",
         name: "title",
@@ -12,10 +27,6 @@ function writeReadMe() {
        { type: 'input',
         name: 'description',
         message: 'Enter the description.',
-       },
-       { type: 'input',
-        name: 'contents',
-        message: 'Add a table of contents.',
        },
        { type: 'input',
         name: 'installation',
@@ -29,11 +40,14 @@ function writeReadMe() {
         name: 'credits',
         message: 'List your collaborators, if any, with links to their GitHub profiles.',
        },
-    //    { type: 'list',
-    //     name: 'license',
-    //     message: 'Select a license to use.',
-    //     choices: ["MIT License", "GNU AGPLv3", "Mozilla Public License 2.0"],
-    //    },
+       { type: 'input',
+        name: 'contributing',
+        message: 'Add guidelines for for other developers who contribute.',
+       },
+       { type: 'input',
+        name: 'tests',
+        message: 'Write tests for your application.',
+       },
         { type: 'list',
         name: 'license',
         message: 'Select a license to use.',
@@ -43,7 +57,7 @@ function writeReadMe() {
               name: 'MIT',
               value: `MIT License
 
-Copyright (c) 2023 [fullname]
+Copyright (c) 2023 [Full Name]
               
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -95,29 +109,34 @@ DEALINGS IN THE SOFTWARE.`,
               name: 'Unlicense',
               value: `This is free and unencumbered software released into the public domain.
 
-              Anyone is free to copy, modify, publish, use, compile, sell, or
-              distribute this software, either in source code form or as a compiled
-              binary, for any purpose, commercial or non-commercial, and by any
-              means.
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
               
-              In jurisdictions that recognize copyright laws, the author or authors
-              of this software dedicate any and all copyright interest in the
-              software to the public domain. We make this dedication for the benefit
-              of the public at large and to the detriment of our heirs and
-              successors. We intend this dedication to be an overt act of
-              relinquishment in perpetuity of all present and future rights to this
-              software under copyright law.
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
               
-              THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-              EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-              IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-              OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-              ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-              OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
               
-              For more information, please refer to <https://unlicense.org>`,
+For more information, please refer to <https://unlicense.org>`,
             },
+            {
+                key: 'N',
+                name: 'None',
+                value: ``,
+              },
           ],
        },
     ])
@@ -139,8 +158,6 @@ DEALINGS IN THE SOFTWARE.`,
 ${answer.description}
         
  ## Table of Contents
-        
-${answer.contents}
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -161,7 +178,22 @@ ${answer.credits}
         
 ## License
         
-${answer.license}`)
+${answer.license}
+
+## Contributing
+        
+${answer.contributing}
+
+## Tests
+        
+${answer.tests}
+
+## Questions
+
+For any furthur questions, please contact ${answer.fullName} at ${answer.email}. 
+GitHub Profile: https://api.github.com/users/${answer.username}/repos?per_page=100
+
+© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.`)
 
    fs.writeFile('templateREADME.md', readMe, (err) => {
     if (err) throw err;
@@ -172,23 +204,4 @@ ${answer.license}`)
 }
 
 
-// function renderLicenseBadge(license) {
-
-// }
-
-// function renderLicenseLink() {
-
-// }
-
-// function renderLicenseSection() {
-
-// }
-
-// function generateMarkdown() {
-//     return `#${data.title}`
-// }
-
-// module.exports = generateMarkdown;
-
-// console.log(readMe);
 writeReadMe();
