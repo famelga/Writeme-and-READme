@@ -4,24 +4,16 @@
 
 | Technology Used         | Resource URL           | 
 | ------------- |:-------------:| 
-| HTML    | [https://developer.mozilla.org/en-US/docs/Web/HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) | 
-| CSS     | [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)      |   
+| Node JS    | [https://developer.mozilla.org/en-US/docs/Glossary/Node.js](https://developer.mozilla.org/en-US/docs/Glossary/Node.js) | 
+| npm     | [https://www.npmjs.com/](https://www.npmjs.com/)      |   
 | Git | [https://git-scm.com/](https://git-scm.com/)     |    
 | JavaScript    | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | 
 
 ## Description 
 
-[Visit the Deployed Site](https://famelga.github.io/Work-Day-Scheduler/)
+Using the inquirer and fs npm packages, users are able to generate a README>md documents usign just a command-line application.
 
-This calendar application follows the 9-5 work schedule, and allows the user to add events. The application is also color-coded based on current hour. 
-
-Most of the html was completed, with the exception of 12pm-5pm. Using the same formatting as the previous time-blocks, I added code to create the missing hours. While the scheduler displays the hours in a 12-hour format, the div ids were labeled using the format of a 24-clock. I did this so that I could use less than, greater than, and equal to in the if/else conditional statements that were used to assign color to the textarea boxes. I also had to remove the "past", "present", "future" classes from the parent div tags so that it would not override JQuery.
-
-I used the for each function instead of a for loop because the for each iterates through every section and passes a callback function. With the time-block class, the function added either a past, present, or future class based on the relationship between the 24-clock div ids and current hour, which was pulled from dayjs. 
-
-Additionally, I was able to pull the current date using dayjs format, and using the text property to display the date from JavaScript to the HTML.
-
-![Scheduler Page](./assets/images/Work%20Day%20Scheduler.gif)
+This application allows for users to answer a series of questions to fill in the necessary of the README template. The inquirer package (version 8.2.4) consists of prompts relating to the README. Responses to these prompts then substitute the placeholders (${}) in the template literal that houses the README template. The writeFile method of File system (fs) creates a new README.md document based on the responses and template literal.  
 
 ## Portfolio Example
 
@@ -66,8 +58,6 @@ Since I may want to target code tags, ids, and classes that have varying names i
 ## Credits
 
 Fayven Amelga
-
-
 
 
 ## License
